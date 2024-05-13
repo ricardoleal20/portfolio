@@ -12,14 +12,13 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            /*background-color: #1a1a1a; /* Fondo oscuro más oscuro */
-            color: #fff; /* Texto blanco */
+            color: #fff;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: linear-gradient(90deg, #1a1a1a, #000000, #1a1a1a); /* Degradado de color */
-            background-size: 2000% 2000%; /* Tamaño del degradado */
-            animation: backgroundWave 8s infinite linear; /* Animación del degradado */
+            background: linear-gradient(90deg, #1a1a1a, #000000, #1a1a1a);
+            background-size: 2000% 2000%;
+            animation: backgroundWave 8s infinite linear;
         }
 
         @keyframes backgroundWave {
@@ -39,7 +38,7 @@
 
         .navbar {
             overflow: hidden;
-            background-color: #333; /* Cambio de color de la navbar */
+            background-color: #333;
             width: 100%;
         }
 
@@ -57,14 +56,13 @@
         }
 
         .navbar a:hover {
-            background-color: #555; /* Cambio de color al pasar el mouse */
+            background-color: #555;
             color: #fff;
         }
 
-        /* Estilo para la página actual */
         .navbar a.current-page {
-            color: #27ae60; /* Color del texto para la página actual */
-            animation: textBlink 1s infinite; /* Animación para resaltar la página actual */
+            color: #27ae60;
+            animation: textBlink 1s infinite;
         }
 
         @keyframes textBlink {
@@ -85,7 +83,7 @@
         }
 
         .card {
-            background-color: #444; /* Cambio de color del card a un tono más oscuro */
+            background-color: #444;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -106,16 +104,16 @@
         }
 
         .card h2 {
-            color: #27ae60; /* Cambio de color del título a verde */
+            color: #27ae60;
         }
 
         .card p {
-            color: #ccc; /* Cambio de color del texto a gris claro */
+            color: #ccc;
         }
 
         @media only screen and (max-width: 600px) {
             .card {
-                max-width: calc(80% - 30px); /* 100% del ancho con un espacio de 20px entre las cards */
+                max-width: calc(80% - 30px);
                 min-height: none;
             }
 
@@ -128,7 +126,7 @@
         .button {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #27ae60; /* Cambio de color del botón a verde */
+            background-color: #27ae60;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
@@ -136,7 +134,7 @@
         }
 
         .button:hover {
-            background-color: #2ecc71; /* Cambio de color al pasar el mouse a un tono más claro de verde */
+            background-color: #2ecc71;
         }
 
         .icon {
@@ -145,8 +143,8 @@
         }
 
         .spacer {
-            height: 100px; /* Altura del espacio en blanco */
-            width: 100%; /* Ajusta el espacio al ancho de la pantalla */
+            height: 100px;
+            width: 100%;
         }
     </style>
 </head>

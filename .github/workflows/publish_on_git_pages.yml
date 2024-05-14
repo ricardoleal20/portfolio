@@ -19,7 +19,7 @@ jobs:
           python-version: '3.11'
 
       - name: Inject the {PATH} var 💉
-        run: python server.py -d false
+        run: python server.py
         
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3

@@ -57,11 +57,9 @@ def main() -> None:
         description="Pass files to know what to do inside the server logic"
     )
     parser.add_argument("-d", "--dev", type=bool)
-    parser.add_argument("-u", "--url", type=str)
     args = parser.parse_args()
-    print(args)
     # Obtain the path to set
-    path = args.url if args.url else ""
+    path = "" if args.dev else "https://ricardoleal20.github.io/portfolio/"
     # Get the directory of where you're going to serve the files
     directory = "."
     # Decide the old variable to replace

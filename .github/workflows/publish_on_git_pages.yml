@@ -21,7 +21,7 @@ jobs:
           python-version: '3.11'
 
       - name: Inject the {PATH} var 💉
-        run: python server.py -u ${{ steps.deployment.outputs.page_url }}
+        run: python server.py
         
       - name: Setup Pages 🧱
         uses: actions/configure-pages@v5

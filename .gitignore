@@ -1,2 +1,6 @@
 # Ignore DS STORE FILES
+*.db
+*.py[cod]
 .DS_STORE
+.web
+__pycache__/

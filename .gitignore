@@ -4,3 +4,4 @@
 .DS_STORE
 .web
 __pycache__/
+.vscode

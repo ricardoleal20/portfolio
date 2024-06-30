@@ -3,7 +3,7 @@ Include a card for my education
 """
 import reflex as rx
 # Local imports
-from portfolio.models import EducationalModel, EducationalType
+from portfolio.models import EducationalModel
 from portfolio.styles import TextSizes, Color
 
 
@@ -12,19 +12,15 @@ def education_card(model: EducationalModel):
     return rx.card(
         rx.vstack(
             rx.icon(
-                __get_icon_by_education_type(model.education_type),
+                model.education_type.value,
                 size=30
             ),
             rx.text(
                 model.study_subject,
                 font_size=TextSizes.HEADING_H3.value,
                 color=Color.PRIMARY.value,
-                weight="bold"
-            ),
-            rx.text(
-                model.education_type,
-                font_size=TextSizes.CARD_HEADER.value,
-                weight="regular"
+                weight="bold",
+                align="center"
             ),
             rx.text(
                 model.range_years,
@@ -40,13 +36,3 @@ def education_card(model: EducationalModel):
             padding_y="2em"
         )
     )
-
-
-def __get_icon_by_education_type(education_type: EducationalType):
-    if education_type == EducationalType.UNIVERSITY.value:
-        return "university"
-    if education_type == EducationalType.LANGUAGE.value:
-        return "languages"
-    if education_type == EducationalType.CERTIFICATE.value:
-        return "file-badge"
-    return "file-badge"

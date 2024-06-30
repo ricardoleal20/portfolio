@@ -1,6 +1,7 @@
 """
 Different models for the portfolio project
 """
+from typing import Optional
 from enum import Enum
 from dataclasses import dataclass
 
@@ -12,9 +13,9 @@ from dataclasses import dataclass
 class EducationalType(Enum):
     """Educational Type information for the model"""
     UNIVERSITY = "university"
-    LANGUAGE = "language"
-    CERTIFICATE = "certificate"
-    PUBLICATION = "publication"
+    LANGUAGE = "languages"
+    CERTIFICATE = "file-badge"
+    PUBLICATION = "test-tubes"
 
 
 # ======================================= #
@@ -45,8 +46,8 @@ class EducationalModel:
 class ProjectModel:
     """Include a dataclass model for the Project information"""
     project_title: str
-    description: str
-    url_github: str
-    url_project: str
     project_image: str
+    description: str
     software_skills: tuple[str, ...]
+    url_project: Optional[str] = None
+    url_github: Optional[str] = None

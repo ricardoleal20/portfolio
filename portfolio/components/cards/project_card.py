@@ -47,18 +47,7 @@ def __desktop_project_card(model: ProjectModel):
                     font_size=TextSizes.HEADING_H3.value,
                 ),
                 rx.hstack(
-                    main_button(
-                        "github",
-                        "Code",
-                        model.url_github,
-                        size_str="3"
-                    ),
-                    main_button(
-                        "link",
-                        "Visitar",
-                        model.url_project,
-                        size_str="3"
-                    ),
+                    *__project_buttons(model),
                     spacing="6"
                 )
             ),
@@ -90,18 +79,7 @@ def __mobile_tablet_project_card(model: ProjectModel):
                     font_size=TextSizes.HEADING_H3.value,
                 ),
                 rx.hstack(
-                    main_button(
-                        "github",
-                        "Code",
-                        model.url_github,
-                        size_str="3"
-                    ),
-                    main_button(
-                        "link",
-                        "Visite",
-                        model.url_project,
-                        size_str="3"
-                    ),
+                    *__project_buttons(model),
                     spacing="6"
                 )
             ),
@@ -109,3 +87,28 @@ def __mobile_tablet_project_card(model: ProjectModel):
         spacing="3",
         align="center",
     )
+
+
+def __project_buttons(model: ProjectModel):
+    """Return the project buttons"""
+    buttons = []
+    # If we have the github button, add them as button
+    if model.url_github:
+        buttons.append(
+            main_button(
+                "github",
+                "Code",
+                model.url_github,
+                size_str="3"
+            ))
+    if model.url_project:
+        buttons.append(
+            main_button(
+                "link",
+                "Visit",
+                model.url_project,
+                size_str="3"
+            )
+        )
+    # Return the buttons
+    return buttons

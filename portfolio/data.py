@@ -1,0 +1,138 @@
+"""
+Include data to add, using the models provided here.
+We'll include data such as the work experience, the education and others.
+"""
+from portfolio.models import (
+    WorkExperienceModel, ProjectModel,
+    EducationalModel, EducationalType
+)
+
+# ========================================== #
+#            WORK EXPERIENCE JOBS            #
+# ========================================== #
+WORK_EXPERIENCE: list[WorkExperienceModel] = [
+    WorkExperienceModel(
+        worked_date="2021 - Current",
+        position_job="Software Engineer",
+        company_and_city="Valiot, México",
+        description_job="""
+            As a member of the ValueChainOS product team, I was responsible for 
+            the backend development using Python. I focused on enhancing product 
+            automation by creating and maintaining essential tools such as our ORM 
+            for interfacing with GraphQL and APIs for data sharing and connectivity 
+            with Typescript and Elixir. Additionally, I developed interfaces to 
+            address mathematical optimization problems, creating or updating 
+            constraints for the current problems that we got supported, I worked 
+            on generalizing internal packages to streamline product implementation 
+            and reduce workload and complexity, such as creating our own personal 
+            workers for running tasks using multi-threading and reporting the 
+            current state of the tasks to other interfaces around the company.
+        """,
+        software_skills=(
+            "Python", "TypeScript", "GraphQL", "Software Architecture", "DevOps"
+        ),
+    )
+]
+
+# ========================================== #
+#                 EDUCATION                  #
+# ========================================== #
+EDUCATION: list[EducationalModel] = [
+    EducationalModel(
+        education_type=EducationalType.UNIVERSITY,
+        educational_entity="Universidad Internacional de la Rioja",
+        study_subject="MSc Computational Science and Applied Mathematics",
+        range_years="2023-Current (Part-Time, expected to end by early 2024.)",
+        description="""
+            Specialization in Computer Science, I work developing APIs for problems solutions in the 
+            industry, using the adequate design pattern for the problem and using techniques to ensure 
+            the correct CI/CD process of the projects.
+            Deep knowledge in algorithms, data structures, numerical analysis and software architecture.
+            With this new expertise, I know how to optimize different processes of the real
+            life, not only my modelling using statistical or mathematical models, but also by
+            applying the better solution for each kind of problem, using my software engineer
+            skills to automatize the process of this problem to have an unique "math problem" that
+            can be used in different places by just implement it. I understand better the
+            applications of the mathematics in the real life, I know how to schedule daily tasks
+            to improve the supply chain of the industries and how to use the received data to model
+            a digital twin of the problems that can be optimized. 
+        """
+    ),
+    EducationalModel(
+        education_type=EducationalType.UNIVERSITY,
+        educational_entity="Universidad Autónoma de Nuevo León",
+        study_subject="BSc Physics",
+        range_years="2018-2021",
+        description="""
+            Specialization in Computational Physics, focusing on 
+            Materials Science and Molecular Dynamics, developing 
+            data analysis tools, fracture prediction in materials, 
+            and optimization tools for the contours of different 
+            atomic structures. During my bachelor, I study and learn
+            not only on how to apply mathematics to solve real problems,
+            such as the entire physics world, but as to use it as a tool
+            to model basically everything. Among this, I understand the
+            benefits of using highly scalable tools (such as HPC) to model
+            and simulate different kind of problems of scenarios. I work as an
+            research assistant in the Materials Science department, using
+            mathematical modelling to understand the materials' behaviour on different
+            situations.
+        """
+    )
+]
+
+# ========================================== #
+#                 CERTIFICATES               #
+# ========================================== #
+CERTIFICATES: list[EducationalModel] = [
+    EducationalModel(
+        education_type=EducationalType.CERTIFICATE,
+        educational_entity="Scrum.org",
+        study_subject="Professional Scrum Developer",
+        range_years="2022",
+        description="""
+            Certification that validates me as a developer with high
+            scrum knowledge. This certification has let me know about Agile methodologies
+            and how to handle different times for projects, how to deal with bugs
+            and unexpected new tasks, among much other things.
+        """
+    ),
+]
+
+# ========================================== #
+#                 PROJECTS                   #
+# ========================================== #
+PROJECTS: list[ProjectModel] = [
+    ProjectModel(
+        project_title="Adaptative GraphQL API",
+        project_image="/projects/graphql.jpeg",
+        url_github=None,
+        url_project="https://ricardo-graphql-api.onrender.com",
+        description="""This project involves developing a Python API using GraphQL,
+            initially designed for internal testing and later for integration 
+            into personal projects. This API is highly flexible and adaptable, 
+            capable of being applied to virtually any GraphQL schema incorporated, 
+            thus offering a versatile and scalable solution for various development needs.
+        """,
+        software_skills=(
+            "Python", "GraphQL", "API Development",
+            "FastAPI", "Dynamic Programming"
+        )
+    ),
+    ProjectModel(
+        project_title="Adaptative GraphQL API",
+        project_image="/projects/pymath_compute.png",
+        url_github="https://github.com/ricardoleal20/pymath_compute",
+        url_project="https://ricardoleal20.github.io/pymath_compute/",
+        description="""PyMathCompute is a Python tool designed to handle
+        mathematical variables, create and evaluate mathematical expressions,
+        and perform various mathematical optimizations. This library is ideal 
+        for modelling problems related to applied mathematics, optimization, 
+        and related fields.
+        """,
+        software_skills=(
+            "Python", "API Development",
+            "Software Architecture", "Mathematical Optimization"
+        )
+    )
+]

@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "portfolio"
+version = "0.1.0"
+description = "Personal Portfolio to share and communicate my projects"
+authors = ["ricardoleal20 <rick.leal420@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+reflex = "^0.5.5"
+
+[tool.poetry.dev-dependencies]
+autopep8 = "^2.3.1"
+pylint = "^3.2.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

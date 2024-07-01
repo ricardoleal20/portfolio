@@ -33,7 +33,7 @@ jobs:
         run: pip install -Iv reflex==0.5.5
 
       - name: Build page 🧱
-        run: API_URL=http://portfolio.ricardoleal20.dev/ reflex export
+        run: API_URL=https://portfolio.ricardoleal20.dev/ reflex export
 
       - name: Extract page 🔐
         run: unzip frontend.zip
@@ -41,7 +41,7 @@ jobs:
       - name: Inject page 💉
         run: python replace_urls.py
         env:
-          URL: http://portfolio.ricardoleal20.dev
+          URL: https://portfolio.ricardoleal20.dev
 
       - name: Setup Pages 🧱
         uses: actions/configure-pages@v5

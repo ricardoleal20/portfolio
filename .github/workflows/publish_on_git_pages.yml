@@ -37,7 +37,12 @@ jobs:
 
       - name: Extract page 🔐
         run: unzip frontend.zip
-        
+
+      - name: Inject page 💉
+        run: python replace_urls.py
+        env:
+          URL: https://ricardoleal20.github.io/portfolio
+
       - name: Setup Pages 🧱
         uses: actions/configure-pages@v5
 

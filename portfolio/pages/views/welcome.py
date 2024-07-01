@@ -69,7 +69,7 @@ def __desktop_welcome_home():
                 )
             ),
             rx.image(
-                src="/profile.png",
+                src="/profile.jpeg",
                 width="auto",
                 height="22vw",
                 border_radius="30px"
@@ -85,7 +85,7 @@ def __table_welcome_home():
     return rx.box(
         rx.vstack(
             rx.image(
-                src="/profile.png",
+                src="/profile.jpeg",
                 width="auto",
                 height="270px",
                 border_radius="30px"
@@ -140,7 +140,7 @@ def __mobile_welcome_home():
     return rx.box(
         rx.vstack(
             rx.image(
-                src="/profile.png",
+                src="/profile.jpeg",
                 width="auto",
                 height="270px",
                 border_radius="30px"

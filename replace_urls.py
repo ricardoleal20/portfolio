@@ -4,7 +4,11 @@ File in Python that include a function that replace all the URLs by a pre-determ
 import os
 import re
 
-patterns = [r'/gato.jpeg', r'/profile.png', r'/favicon.ico', r'/_next/static/']
+patterns = [
+    r'/gato.jpeg', r'/profile.jpeg',
+    r'/favicon.ico', r'/_next/static/',
+    r'/projects'
+]
 
 
 def replace_patterns(url: str) -> None:

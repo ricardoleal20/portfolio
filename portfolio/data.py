@@ -120,7 +120,7 @@ PROJECTS: list[ProjectModel] = [
         )
     ),
     ProjectModel(
-        project_title="Adaptative GraphQL API",
+        project_title="PyMath Compute",
         project_image="/projects/pymath_compute.png",
         url_github="https://github.com/ricardoleal20/pymath_compute",
         url_project="https://ricardoleal20.github.io/pymath_compute/",

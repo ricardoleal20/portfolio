@@ -10,7 +10,7 @@ patterns = [r'/gato.jpeg', r'/profile.png', r'/favicon.ico', r'/_next/static/']
 def replace_patterns(url: str) -> None:
     """Replace the patterns in the URL"""
     # Read the index.html file
-    with open('/index.html', 'r', encoding='utf-8') as file:
+    with open('./index.html', 'r', encoding='utf-8') as file:
         content = file.read()
 
     # Modificar el contenido del archivo HTML
@@ -18,7 +18,7 @@ def replace_patterns(url: str) -> None:
         content = re.sub(pattern, f'{url}{pattern}', content)
 
     # Guardar el contenido modificado en un nuevo archivo HTML
-    with open('/index.html', 'w', encoding='utf-8') as file:
+    with open('./index.html', 'w', encoding='utf-8') as file:
         file.write(content)
 
 

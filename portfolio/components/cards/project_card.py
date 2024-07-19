@@ -27,31 +27,36 @@ def project_card(model: ProjectModel):
 
 def __desktop_project_card(model: ProjectModel):
     """Define the Desktop alternative"""
-    return rx.hstack(
-        rx.image(
+
+    cards: list[rx.Component] = []
+    if model.project_image:
+        cards.append(rx.image(
             src=model.project_image,
             width="550px",
             height="317px",
             border_radius="15px"
-        ),
-        rx.flex(
-            rx.vstack(
-                rx.text(
-                    model.project_title,
-                    font_size=TextSizes.HEADING_H3.value,
-                    weight="bold"
-                ),
-                hstack_software_tags(model.software_skills),
-                rx.text(
-                    model.description,
-                    font_size=TextSizes.HEADING_H3.value,
-                ),
-                rx.hstack(
-                    *__project_buttons(model),
-                    spacing="6"
-                )
+        ))
+    cards.append(rx.flex(
+        rx.vstack(
+            rx.text(
+                model.project_title,
+                font_size=TextSizes.HEADING_H3.value,
+                weight="bold"
             ),
+            hstack_software_tags(model.software_skills),
+            rx.text(
+                model.description,
+                font_size=TextSizes.HEADING_H3.value,
+            ),
+            rx.hstack(
+                *__project_buttons(model),
+                spacing="6"
+            )
         ),
+    ))
+
+    return rx.hstack(
+        *cards,
         spacing="9",
         align="center",
     )
@@ -59,14 +64,16 @@ def __desktop_project_card(model: ProjectModel):
 
 def __mobile_tablet_project_card(model: ProjectModel):
     """Define the mobile alternatives"""
-    return rx.vstack(
-        rx.image(
+    cards: list[rx.Component] = []
+
+    if model.project_image:
+        cards.append(rx.image(
             src=model.project_image,
             width="100%",
             height="auto",
             border_radius="15px"
-        ),
-        rx.flex(
+        ))
+    cards.append(rx.flex(
             rx.vstack(
                 rx.text(
                     model.project_title,
@@ -83,7 +90,10 @@ def __mobile_tablet_project_card(model: ProjectModel):
                     spacing="6"
                 )
             ),
-        ),
+    ))
+
+    return rx.vstack(
+        *cards,
         spacing="3",
         align="center",
     )

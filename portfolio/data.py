@@ -107,7 +107,7 @@ PROJECTS: list[ProjectModel] = [
         project_title="Adaptative GraphQL API",
         project_image="/projects/graphql.jpeg",
         url_github=None,
-        url_project="https://ricardo-graphql-api.onrender.com",
+        url_project="https://graphql-demo.ricardoleal20.dev",
         description="""This project involves developing a Python API using GraphQL,
             initially designed for internal testing and later for integration 
             into personal projects. This API is highly flexible and adaptable, 
@@ -123,7 +123,7 @@ PROJECTS: list[ProjectModel] = [
         project_title="PyMath Compute",
         project_image="/projects/pymath_compute.png",
         url_github="https://github.com/ricardoleal20/pymath_compute",
-        url_project="https://ricardoleal20.github.io/pymath_compute/",
+        url_project="https://pymath.ricardoleal20.dev",
         description="""PyMathCompute is a Python tool designed to handle
         mathematical variables, create and evaluate mathematical expressions,
         and perform various mathematical optimizations. This library is ideal 
@@ -131,8 +131,21 @@ PROJECTS: list[ProjectModel] = [
         and related fields.
         """,
         software_skills=(
-            "Python", "API Development",
-            "Software Architecture", "Mathematical Optimization"
+            "Python", "Rust", "API Development",
+            "Software Architecture", "Applied Mathematics"
+        )
+    ),
+    ProjectModel(
+        project_title="Prediction based on random DNI",
+        project_image="",
+        url_github="https://github.com/ricardoleal20/dni-based-prediction",
+        description="""This project implements and compares three different regression methods:
+        multiple linear regression, multiple linear regression with step-wise selection,
+        and elastic net regression. The objective is to generate a dataset based on a
+        provided National Identity Document (DNI), train regression models, and evaluate their performance.
+        """,
+        software_skills=(
+            "Python", "Data Science"
         )
     )
 ]

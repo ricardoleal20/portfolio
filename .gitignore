@@ -2,6 +2,7 @@
 *.db
 *.py[cod]
 .DS_STORE
+.vscode
 .web
 __pycache__/
-.vscode
+assets/external/

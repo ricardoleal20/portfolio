@@ -167,5 +167,18 @@ OPEN_SOURCE: list[OpenSourceModel] = [
             "Python", "Rust", "API Development",
             "Software Architecture", "Applied Mathematics"
         )
+    ),
+    OpenSourceModel(
+        project_title="SemPyVer",
+        project_image="",
+        url_github="https://github.com/ricardoleal20/sempyver",
+        url_project="",
+        description="""Tool for teams that manage the creation and modification
+        of the CHANGELOG based on a specified set of changes. It allow to keep a clean
+        right path for groups implementation.
+        """,
+        software_skills=(
+            "Rust", "API Development"
+        )
     )
 ]

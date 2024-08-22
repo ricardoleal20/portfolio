@@ -51,3 +51,14 @@ class ProjectModel:
     software_skills: tuple[str, ...]
     url_project: Optional[str] = None
     url_github: Optional[str] = None
+
+
+@dataclass
+class OpenSourceModel:
+    """Include a dataclass model for the OpenSource code"""
+    project_title: str
+    project_image: str
+    description: str
+    software_skills: tuple[str, ...]
+    url_project: Optional[str] = None
+    url_github: Optional[str] = None

@@ -25,6 +25,7 @@ def navbar():
                     navbar_link("Experience", "experience"),
                     navbar_link("Education", "education"),
                     navbar_link("Projects", "projects"),
+                    navbar_link("Open Source", "open_source"),
                     navbar_link("About me", "about_me"),
                     rx.color_mode.button(),
                     justify="end",
@@ -55,6 +56,7 @@ def navbar():
                         navbar_menu_item_link("Experience", "experience"),
                         navbar_menu_item_link("Education", "education"),
                         navbar_menu_item_link("Projects", "projects"),
+                        navbar_menu_item_link("Open source", "open_source"),
                         navbar_menu_item_link("About me", "about_me"),
                     ),
                     justify="end"

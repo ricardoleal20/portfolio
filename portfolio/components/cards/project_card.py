@@ -3,7 +3,7 @@ Define the Project card to define different projects
 """
 import reflex as rx
 # Local imports
-from portfolio.models import ProjectModel
+from portfolio.models import ProjectModel, OpenSourceModel
 from portfolio.styles import (
     TextSizes
 )
@@ -11,7 +11,7 @@ from portfolio.components.skills import hstack_software_tags
 from portfolio.components.miscellaneous import main_button
 
 
-def project_card(model: ProjectModel):
+def project_card(model: ProjectModel | OpenSourceModel):
     """Define the project card element with the desktop and mobile
     alternatives
     """
@@ -25,7 +25,7 @@ def project_card(model: ProjectModel):
     )
 
 
-def __desktop_project_card(model: ProjectModel):
+def __desktop_project_card(model: ProjectModel | OpenSourceModel):
     """Define the Desktop alternative"""
 
     cards: list[rx.Component] = []
@@ -62,7 +62,7 @@ def __desktop_project_card(model: ProjectModel):
     )
 
 
-def __mobile_tablet_project_card(model: ProjectModel):
+def __mobile_tablet_project_card(model: ProjectModel | OpenSourceModel):
     """Define the mobile alternatives"""
     cards: list[rx.Component] = []
 
@@ -99,7 +99,7 @@ def __mobile_tablet_project_card(model: ProjectModel):
     )
 
 
-def __project_buttons(model: ProjectModel):
+def __project_buttons(model: ProjectModel | OpenSourceModel):
     """Return the project buttons"""
     buttons = []
     # If we have the github button, add them as button

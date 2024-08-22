@@ -6,6 +6,7 @@ from portfolio.pages.views.welcome import welcome
 from portfolio.pages.views.laboral_experience import laboral_experience
 from portfolio.pages.views.education import education, certificates
 from portfolio.pages.views.projects import projects
+from portfolio.pages.views.open_source import open_source
 from portfolio.pages.views.about_me import about_me
 from portfolio.pages.views.footer import footer
 
@@ -20,6 +21,7 @@ def index():
             education(),
             certificates(),
             projects(),
+            open_source(),
             about_me(),
             align="center",
             justify="center",

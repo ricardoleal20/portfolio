@@ -4,7 +4,8 @@ We'll include data such as the work experience, the education and others.
 """
 from portfolio.models import (
     WorkExperienceModel, ProjectModel,
-    EducationalModel, EducationalType
+    EducationalModel, EducationalType,
+    OpenSourceModel
 )
 
 # ========================================== #
@@ -120,6 +121,38 @@ PROJECTS: list[ProjectModel] = [
         )
     ),
     ProjectModel(
+        project_title="Prediction based on random DNI",
+        project_image="",
+        url_github="https://github.com/ricardoleal20/dni-based-prediction",
+        description="""This project implements and compares three different regression and
+        classification methods: multiple linear regression, multiple linear regression with step-wise selection,
+        elastic net regression, random forest and GBM. The objective is to generate a dataset based on a
+        provided National Identity Document (DNI), train regression models, and evaluate their performance.
+        """,
+        software_skills=(
+            "Python", "Data Science"
+        )
+    ),
+    ProjectModel(
+        project_title="SuperMarket Optimization schedule",
+        project_image="",
+        url_github="https://github.com/ricardoleal20/supermarket_problem",
+        description="""This project involves the optimization of clients in a supermarket, deciding
+        how many cashiers do we want and where do we want them (if we can have them on the express lines
+         or in the normal ones). We see datatables with the available cashiers, including their efficiency
+         at the moment of dealing with clients, along with the clients time arrival.
+        """,
+        software_skills=(
+            "Python", "Rust", "Applied Mathematics", "API Development"
+        )
+    )
+]
+
+# ========================================== #
+#              OPEN SOURCE CODE              #
+# ========================================== #
+OPEN_SOURCE: list[OpenSourceModel] = [
+    OpenSourceModel(
         project_title="PyMath Compute",
         project_image="/projects/pymath_compute.png",
         url_github="https://github.com/ricardoleal20/pymath_compute",
@@ -133,19 +166,6 @@ PROJECTS: list[ProjectModel] = [
         software_skills=(
             "Python", "Rust", "API Development",
             "Software Architecture", "Applied Mathematics"
-        )
-    ),
-    ProjectModel(
-        project_title="Prediction based on random DNI",
-        project_image="",
-        url_github="https://github.com/ricardoleal20/dni-based-prediction",
-        description="""This project implements and compares three different regression methods:
-        multiple linear regression, multiple linear regression with step-wise selection,
-        and elastic net regression. The objective is to generate a dataset based on a
-        provided National Identity Document (DNI), train regression models, and evaluate their performance.
-        """,
-        software_skills=(
-            "Python", "Data Science"
         )
     )
 ]

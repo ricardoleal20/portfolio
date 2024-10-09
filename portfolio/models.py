@@ -40,6 +40,7 @@ class EducationalModel:
     educational_entity: str
     range_years: str
     description: str
+    url: Optional[str] = None
 
 
 @dataclass

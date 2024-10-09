@@ -43,7 +43,7 @@ EDUCATION: list[EducationalModel] = [
         education_type=EducationalType.UNIVERSITY,
         educational_entity="Universidad Internacional de la Rioja",
         study_subject="MSc Computational Science and Applied Mathematics",
-        range_years="2023-Current (Part-Time, expected to end by early 2024.)",
+        range_years="2023-Current (Part-Time, expected to end by early 2025.)",
         description="""
             Specialization in Computer Science, I work developing APIs for problems solutions in the 
             industry, using the adequate design pattern for the problem and using techniques to ensure 
@@ -91,6 +91,7 @@ CERTIFICATES: list[EducationalModel] = [
         educational_entity="Scrum.org",
         study_subject="Professional Scrum Developer",
         range_years="2022",
+        url="https://www.credly.com/badges/2cc0bbc8-dc92-4ff4-b69c-0024f78c412b?source=linked_in_profile",
         description="""
             Certification that validates me as a developer with high
             scrum knowledge. This certification has let me know about Agile methodologies

@@ -5,10 +5,13 @@ import reflex as rx
 # Local imports
 from portfolio.models import EducationalModel
 from portfolio.styles import TextSizes, Color
+# Locally import the main button
+from portfolio.components.miscellaneous import main_button
 
 
 def education_card(model: EducationalModel):
     """Include the education card"""
+    # Define the study object ONLY if they have url
     return rx.card(
         rx.vstack(
             rx.icon(
@@ -30,6 +33,11 @@ def education_card(model: EducationalModel):
                 model.description,
                 font_size=TextSizes.CARD_BODY.value,
                 text_align="center"
+            ),
+            # Add an URL button only if we have one
+            rx.cond(
+                bool(model.url),
+                main_button("link", "See", model.url, "3")  # type: ignore
             ),
             align="center",
             justify="center",

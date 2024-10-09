@@ -10,8 +10,8 @@ DESCRIPTION = """
     and more. I love optimizing code and automating processes to create efficient and robust
     solutions. During my career, I've been working on solving mathematical problems through
     optimization problems, also working directly on product, making everything general,
-    flexible and robust. I also worked improving the APIs, increasing performance and reducing
-    complexity of different kind of problems.
+    flexible and robust. I also worked on improving the APIs, increasing performance and reducing
+    complexity of different kinds of problems.
 """
 EMAIL = "mailto:ricardo.lealpz@gmail.com"
 

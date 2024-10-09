@@ -99,6 +99,32 @@ CERTIFICATES: list[EducationalModel] = [
             and unexpected new tasks, among much other things.
         """
     ),
+    EducationalModel(
+        education_type=EducationalType.CERTIFICATE,
+        educational_entity="IBM",
+        study_subject="Data Analysis with Python",
+        range_years="2021",
+        url="https://www.credly.com/badges/acaeda41-d221-4642-be9a-2181eb683fcb/public_url",
+        description="""
+            This certification validates me as a person with knowledge in the data
+            analysis world, I know how to handle different data structures, how to
+            clean data and how to deal with the different problems that can be solved
+            using the data analysis tools.
+        """
+    ),
+    EducationalModel(
+        education_type=EducationalType.CERTIFICATE,
+        educational_entity="AWS",
+        study_subject="AWS Academy Cloud Foundations",
+        range_years="2020",
+        url="https://www.credly.com/badges/10aea289-b676-4ee3-8c2e-c47da07faadb",
+        description="""
+            This certification validates me as a person with knowledge in the cloud
+            computing world, I know how to handle different services that AWS offers
+            and how to deal with the different problems that can be solved using the
+            cloud services.
+        """
+    ),
 ]
 
 # ========================================== #
@@ -110,11 +136,12 @@ PROJECTS: list[ProjectModel] = [
         project_image="/projects/graphql.jpeg",
         url_github=None,
         url_project="https://graphql-demo.ricardoleal20.dev",
-        description="""This project involves developing a Python API using GraphQL,
-            initially designed for internal testing and later for integration 
-            into personal projects. This API is highly flexible and adaptable, 
-            capable of being applied to virtually any GraphQL schema incorporated, 
-            thus offering a versatile and scalable solution for various development needs.
+        description="""
+            This project is a demo of an adaptive GraphQL API that can be used to
+            query different endpoints and get the data that you need. This API is
+            designed to be flexible and scalable, allowing you to query the data
+            that you need, and nothing more. It is designed to be fast and efficient,
+            also to be reusable in different projects.
         """,
         software_skills=(
             "Python", "GraphQL", "API Development",
@@ -138,10 +165,10 @@ PROJECTS: list[ProjectModel] = [
         project_title="SuperMarket Optimization schedule",
         project_image="",
         url_github="https://github.com/ricardoleal20/supermarket_problem",
-        description="""This project involves the optimization of clients in a supermarket, deciding
-        how many cashiers do we want and where do we want them (if we can have them on the express lines
-         or in the normal ones). We see datatables with the available cashiers, including their efficiency
-         at the moment of dealing with clients, along with the clients time arrival.
+        description="""
+        This project implements a supermarket optimization schedule using a linear algorithm solver.
+        The objective is to generate a schedule for the supermarket employees based on the number of
+        employees available, the number of clients, and the time that each employee takes to attend each client.
         """,
         software_skills=(
             "Python", "Rust", "Applied Mathematics", "API Development"

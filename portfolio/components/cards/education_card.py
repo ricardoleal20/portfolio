@@ -37,7 +37,8 @@ def education_card(model: EducationalModel):
             # Add an URL button only if we have one
             rx.cond(
                 bool(model.url),
-                main_button("link", "See", model.url, "3")  # type: ignore
+                main_button("link", "See certificate",
+                            model.url, "3")  # type: ignore
             ),
             align="center",
             justify="center",

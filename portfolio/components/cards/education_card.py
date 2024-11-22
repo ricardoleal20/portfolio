@@ -9,8 +9,23 @@ from portfolio.styles import TextSizes, Color
 from portfolio.components.miscellaneous import main_button
 
 
-def education_card(model: EducationalModel):
+def education_card(model: EducationalModel, number_of_cards: int = 2):
     """Include the education card"""
+    # SELECT THE WIDTH OF THE CARD!
+    width = f"{100/number_of_cards}%"
+    # Only if we have number of cards = 1, we'll change the height
+    if number_of_cards == 1:
+        # Depending on the len of characters...
+        if len(model.description) > 1100:
+            height = "60em"
+        elif len(model.description) > 950:
+            height = "50em"
+        elif len(model.description) > 600:
+            height = "40em"
+        else:
+            height = "30em"
+    else:
+        height = "38em"
     # Define the study object ONLY if they have url
     return rx.card(
         rx.vstack(
@@ -42,6 +57,8 @@ def education_card(model: EducationalModel):
             ),
             align="center",
             justify="center",
-            padding_y="2em"
-        )
+            padding_y="2em",
+        ),
+        height=height,
+        width=width
     )

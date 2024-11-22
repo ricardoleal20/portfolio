@@ -40,7 +40,7 @@ def __body_hstack_education(models: list[EducationalModel]):
         rx.desktop_only(
             rx.hstack(
                 *[
-                    education_card(model)
+                    education_card(model, len(models))
                     for model in models
                 ],
                 spacing="7",
@@ -50,7 +50,7 @@ def __body_hstack_education(models: list[EducationalModel]):
         rx.mobile_and_tablet(
             rx.vstack(
                 *[
-                    education_card(model)
+                    education_card(model, 1)
                     for model in models
                 ],
                 spacing="7",

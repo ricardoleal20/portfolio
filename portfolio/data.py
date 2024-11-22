@@ -87,11 +87,25 @@ EDUCATION: list[EducationalModel] = [
 # ========================================== #
 CERTIFICATES: list[EducationalModel] = [
     EducationalModel(
+        education_type=EducationalType.UNIVERSITY,
+        educational_entity="Tecnologico Nacional de México",
+        study_subject="Data Science Diploma",
+        range_years="2024",
+        url="https://drive.google.com/file/d/1y9uZ8FCk0c5SKR7FI-zjvFPAfVvAJcCR/view?usp=share_link",
+        description="""
+            This diploma validates me as a person that holds enough knowledge about the Data Science
+            area. I know how to handle different data structures and big groups of data, how to clean
+            it efficiently and how to deal with the different problems that can be shown in the industry,
+            using statistical and machine learning models.
+        """
+    ),
+    EducationalModel(
         education_type=EducationalType.CERTIFICATE,
         educational_entity="Scrum.org",
         study_subject="Professional Scrum Developer",
         range_years="2022",
-        url="https://www.credly.com/badges/2cc0bbc8-dc92-4ff4-b69c-0024f78c412b?source=linked_in_profile",
+        url="https://www.credly.com/badges/2cc0bbc8-dc92-4ff4-b69c" +
+            "-0024f78c412b?source=linked_in_profile",
         description="""
             Certification that validates me as a developer with high
             scrum knowledge. This certification has let me know about Agile methodologies

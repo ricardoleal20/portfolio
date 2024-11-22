@@ -32,11 +32,19 @@ def __desktop_about_me():
         rx.hstack(
             __info_about_me("75%"),
             rx.flex(
-                rx.image(
-                    src="/gato.jpeg",
-                    width="auto",
-                    height="250px",
-                    border_radius="30px"
+                rx.vstack(
+                    rx.image(
+                        src="/gato.jpeg",
+                        width="auto",
+                        height="250px",
+                        border_radius="30px"
+                    ),
+                    rx.image(
+                        src="/chop.jpeg",
+                        width="auto",
+                        height="250px",
+                        border_radius="30px"
+                    )
                 ),
                 width="25%",
                 justify="center",
@@ -59,11 +67,19 @@ def __mobile_about_me():
         ),
         rx.vstack(
             rx.flex(
+                rx.hstack(
                 rx.image(
                     src="/gato.jpeg",
                     width="auto",
                     height="200px",
                     border_radius="30px"
+                ),
+                    rx.image(
+                    src="/chop.jpeg",
+                    width="auto",
+                    height="200px",
+                    border_radius="30px"
+                ),
                 ),
                 justify="center",
                 align="center"
@@ -123,7 +139,9 @@ def __info_about_me(width: str = "100%"):
             " that I do, even my personal projects or automations that I made for my home.",
             " I have a cat called ",
             ":bold:Gato",
-            " that is my daily companion for my work sessions."
+            " that is my daily companion for my work sessions, and a dog called ",
+            ":bold:Chop",
+            " that is my exercise partner."
         ),
         width=width
     )

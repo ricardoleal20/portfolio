@@ -15,22 +15,33 @@ WORK_EXPERIENCE: list[WorkExperienceModel] = [
     WorkExperienceModel(
         worked_date="2021 - Current",
         position_job="Software Engineer",
-        company_and_city="Valiot, México",
+        company_and_city="Valiot, México / USA",
         description_job="""
-            As a member of the ValueChainOS product team, I was responsible for 
-            the backend development using Python. I focused on enhancing product 
-            automation by creating and maintaining essential tools such as our ORM 
-            for interfacing with GraphQL and APIs for data sharing and connectivity 
-            with Typescript and Elixir. Additionally, I developed interfaces to 
-            address mathematical optimization problems, creating or updating 
-            constraints for the current problems that we got supported, I worked 
-            on generalizing internal packages to streamline product implementation 
-            and reduce workload and complexity, such as creating our own personal 
-            workers for running tasks using multi-threading and reporting the 
-            current state of the tasks to other interfaces around the company.
+            As a member of the ValueChainOS product team, I was responsible for backend development using Python. 
+            My focus was on enhancing product automation by creating and maintaining essential tools such as our ORM 
+            for interfacing with GraphQL and APIs for data sharing and connectivity using TypeScript and Elixir. 
+            Additionally, I developed interfaces to address mathematical optimization problems, creating or updating 
+            constraints for supported problems. I worked on generalizing internal packages to streamline product 
+            implementation and reduce workload and complexity, such as creating custom workers for running tasks 
+            using multi-threading and reporting the current state of tasks to other interfaces within the company.
         """,
         software_skills=(
             "Python", "TypeScript", "GraphQL", "Software Architecture", "DevOps"
+        ),
+    ),
+    WorkExperienceModel(
+        worked_date="2020 - 2021",
+        position_job="Research Assistant",
+        company_and_city="Facultad de Ciencias Físico Matemáticas, México",
+        description_job="""
+            Developed simulations of various materials to understand their behavior and analyze their reactions using 
+            molecular dynamics techniques, programmed in Python and LAMMPS. Improved the results and execution time 
+            of simulations using optimization techniques such as gradient methods. Utilized Python for the creation 
+            and manipulation of nanostructures, as well as for data analysis and prediction of changes. Leveraged HPC 
+            (High-Performance Computing) clusters to optimize the computational efficiency of simulations.
+        """,
+        software_skills=(
+            "Python", "C++", "Java", "Data Science", "Applied Mathematics"
         ),
     )
 ]

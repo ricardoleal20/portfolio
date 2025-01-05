@@ -16,7 +16,32 @@ def index():
     return rx.box(
         navbar(),
         rx.vstack(
-            welcome(),
+            rx.box(
+                rx.tablet_and_desktop(
+                    rx.box(
+                        welcome(),
+                        width="50%",
+                        # margin_x="auto",
+                    ),
+                    background_size="20px 20px",
+                    background_image="radial-gradient(circle, hsl(0, 0%, 25%)" +
+                    " 1px, transparent 1px)",
+                    overlow="hidden",
+                    width="200%"
+                ),
+                rx.mobile_only(
+                    rx.box(
+                        welcome(),
+                        width="50%",
+                        margin_x="auto",
+                    ),
+                    background_size="20px 20px",
+                    background_image="radial-gradient(circle, hsl(0, 0%, 25%)" +
+                    " 1px, transparent 1px)",
+                    overlow="hidden",
+                    width="100%"
+                )
+            ),
             laboral_experience(),
             education(),
             certificates(),

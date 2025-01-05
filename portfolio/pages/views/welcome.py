@@ -30,6 +30,7 @@ def __desktop_welcome_home():
     """Desktop view for the Welcome home"""
     return rx.box(
         rx.hstack(
+            # Information about me
             rx.vstack(
                 rx.heading(
                     info.FULL_NAME,
@@ -66,8 +67,9 @@ def __desktop_welcome_home():
                         "4"
                     ),
                     spacing="5"
-                )
+                ),
             ),
+            # Profile
             rx.image(
                 src="/profile.jpeg",
                 width="auto",
@@ -75,8 +77,8 @@ def __desktop_welcome_home():
                 border_radius="30px"
             ),
             align="center",
-            spacing="7"
-        )
+            spacing="7",
+        ),
     )
 
 

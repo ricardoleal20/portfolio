@@ -45,6 +45,11 @@ def education_card(model: EducationalModel, number_of_cards: int = 2):
                     model.range_years,
                     font_size=TextSizes.CARD_BODY.value,
                 ),
+                # Create the Hline
+                rx.el.hr(
+                    background_color=Color.GREY,
+                    height="3px", width="90%"
+                ),
                 rx.text(
                     model.description,
                     font_size=TextSizes.CARD_BODY.value,
@@ -53,8 +58,12 @@ def education_card(model: EducationalModel, number_of_cards: int = 2):
                 # Add an URL button only if we have one
                 rx.cond(
                     bool(model.url),
-                    main_button("link", "See certificate",
-                                model.url, "3")  # type: ignore
+                    main_button(
+                        "link",
+                        "See certificate",
+                        model.url,  # type: ignore
+                        "3"
+                    )
                 ),
                 align="center",
                 justify="center",

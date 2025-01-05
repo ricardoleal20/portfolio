@@ -16,7 +16,7 @@ def navbar():
                 rx.link(
                     rx.heading(
                         info.USERNAME,
-                        style=heading_navbar,
+                        style=heading_navbar,  # type: ignore
                         as_="h3"
                     ),
                     href="/"
@@ -26,6 +26,7 @@ def navbar():
                     navbar_link("Education", "education"),
                     navbar_link("Projects", "projects"),
                     navbar_link("Open Source", "open_source"),
+                    navbar_link("Work Visa Eligibility", "visa"),
                     navbar_link("About me", "about_me"),
                     rx.color_mode.button(),
                     justify="end",
@@ -43,7 +44,7 @@ def navbar():
                 rx.link(
                     rx.heading(
                         info.USERNAME,
-                        style=heading_navbar,
+                        style=heading_navbar,  # type: ignore
                         as_="h3"
                     ),
                     href="/"
@@ -57,6 +58,7 @@ def navbar():
                         navbar_menu_item_link("Education", "education"),
                         navbar_menu_item_link("Projects", "projects"),
                         navbar_menu_item_link("Open source", "open_source"),
+                        navbar_menu_item_link("Work Visa Eligibility", "visa"),
                         navbar_menu_item_link("About me", "about_me"),
                     ),
                     justify="end"

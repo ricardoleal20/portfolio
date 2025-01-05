@@ -10,6 +10,7 @@ class Color(Enum):
     """Include the palette of colors"""
     PRIMARY = "#19C28C"
     SECONDARY = "#CEF1E6"
+    GREY = rx.color("gray", 5)
     BACKGROUND = "white"
     BACKGROUND_CONTENT = "#F7F6F6"
     TEXT = "black"

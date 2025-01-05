@@ -5,7 +5,7 @@ We'll include data such as the work experience, the education and others.
 from portfolio.models import (
     WorkExperienceModel, ProjectModel,
     EducationalModel, EducationalType,
-    OpenSourceModel
+    OpenSourceModel, WorkVisaModel
 )
 
 # ========================================== #
@@ -232,6 +232,104 @@ OPEN_SOURCE: list[OpenSourceModel] = [
         """,
         software_skills=(
             "Rust", "API Development"
+        )
+    )
+]
+
+# ========================================== #
+#              WORK VISA MODELS              #
+# ========================================== #
+WORK_VISA: list[WorkVisaModel] = [
+    # * Mexico Work Visas
+    WorkVisaModel(
+        visa_name="Citizenship",
+        country="Mexico",
+        description=(
+            "As a citizen, I do not need any kind of visa to work in Mexico."
+        ),
+        eligibility_conditions=(
+            "Requires to be a Mexican citizen."
+        ),
+        duration="N/A",
+        application_fee=9999,
+        processing_time="2-3 months",
+        required_documents=[
+            "Valid passport or ID",
+        ],
+        application_link=""
+    ),
+    # * USA Work Visas
+    # WorkVisaModel(
+    #     visa_name="H-1B Visa",
+    #     country="United States",
+    #     description="A visa for specialized professionals in fields" +
+    #     " like IT, finance, and engineering.",
+    #     eligibility_conditions="Requires a bachelor's degree or equivalent" +
+    #     " and a job offer from a U.S. employer. Also, the employer must" +
+    #     " sponsor the visa.",
+    #     duration="3 years (extendable up to 6 years)",
+    #     application_fee=460.00,
+    #     processing_time="3-6 months",
+    #     required_documents=[
+    #         "Passport",
+    #         "Degree certificates",
+    #         "USA Job offer letter",
+    #         "A sponsor employer",
+    #         # "Proof of work experience"
+    #     ],
+    #     application_link="https://www.uscis.gov/h-1b"
+    # ),
+    WorkVisaModel(
+        visa_name="TN Visa (Trade NAFTA)",
+        country="United States",
+        description=(
+            "A non-immigrant visa for citizens of Mexico and Canada, "
+            "allowing temporary employment in the United States in qualified professional roles." +
+            " This, different from the H-1B visa, does not require a sponsor employer."
+        ),
+        eligibility_conditions=(
+            "Applicants must be citizens of Mexico or Canada" +
+            " and have a job offer in a NAFTA-listed "
+            "occupation (e.g., accountants, engineers, scientists)." +
+            " Proof of qualifications required."
+        ),
+        duration="3 years (renewable indefinitely under certain conditions)",
+        application_fee=160.00,  # General consular processing fee
+        processing_time="Varies by consulate or port of entry; typically 1-3 weeks",
+        required_documents=[
+            "Passport",
+            "Degree certificates",
+            "USA Job offer letter",
+            "DS-160 application form"
+        ],
+        application_link="https://travel.state.gov/content/travel/en/us-visas/employment/tn.html"
+    ),
+    # * Canada Work Visas
+    WorkVisaModel(
+        visa_name="Working Holiday Visa (IEC)",
+        country="Canada",
+        description=(
+            "A visa that allows Mexican citizens to travel and work temporarily in Canada "
+            "without the need for a job offer or sponsor."
+        ),
+        eligibility_conditions=(
+            "Applicants must be Mexican citizens aged 18-35, have a valid"
+            " passport, and sufficient funds "
+            "to support themselves upon arrival (minimum CAD 2,500)."
+            " No job offer is required."
+        ),
+        duration="Up to 1 year",
+        application_fee=156.00,  # Approximate fee in CAD
+        processing_time="6-8 weeks",
+        required_documents=[
+            "Valid Mexican passport",
+            "Proof of funds",
+            "Police clearance certificate",
+            "Application IRCC"
+        ],
+        application_link=(
+            "https://www.canada.ca/en/immigration-refugees-citizenship/"
+            "services/work-canada/iec.html"
         )
     )
 ]

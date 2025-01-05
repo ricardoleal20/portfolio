@@ -63,3 +63,17 @@ class OpenSourceModel:
     software_skills: tuple[str, ...]
     url_project: Optional[str] = None
     url_github: Optional[str] = None
+
+
+@dataclass
+class WorkVisaModel:  # pylint: disable=R0902
+    """Include a dataclass model for the Visa information"""
+    visa_name: str
+    country: str
+    description: str
+    eligibility_conditions: str
+    duration: str
+    application_fee: float
+    processing_time: str
+    required_documents: list[str]
+    application_link: str

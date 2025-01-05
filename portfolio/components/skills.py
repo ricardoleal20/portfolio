@@ -19,7 +19,7 @@ def tag_software_skill(software_str: str):
             padding_y="0.5em"
         ),
         border_radius="15px",
-        background_color=Color.SECONDARY,
+        background_color=Color.GREY,
     )
 
 

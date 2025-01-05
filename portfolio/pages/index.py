@@ -26,7 +26,6 @@ def index():
                     background_size="20px 20px",
                     background_image="radial-gradient(circle, hsl(0, 0%, 25%)" +
                     " 1px, transparent 1px)",
-                    overlow="hidden",
                     width="200%"
                 ),
                 rx.mobile_only(

@@ -28,37 +28,49 @@ def education_card(model: EducationalModel, number_of_cards: int = 2):
         height = "38em"
     # Define the study object ONLY if they have url
     return rx.card(
-        rx.vstack(
-            rx.icon(
-                model.education_type.value,
-                size=30
+        rx.hstack(
+            rx.vstack(
+                rx.icon(
+                    model.education_type.value,
+                    size=30
+                ),
+                rx.text(
+                    model.study_subject,
+                    font_size=TextSizes.HEADING_H3.value,
+                    color=Color.PRIMARY.value,
+                    weight="bold",
+                    align="center"
+                ),
+                rx.text(
+                    model.range_years,
+                    font_size=TextSizes.CARD_BODY.value,
+                ),
+                rx.text(
+                    model.description,
+                    font_size=TextSizes.CARD_BODY.value,
+                    text_align="center"
+                ),
+                # Add an URL button only if we have one
+                rx.cond(
+                    bool(model.url),
+                    main_button("link", "See certificate",
+                                model.url, "3")  # type: ignore
+                ),
+                align="center",
+                justify="center",
+                padding_y="2em",
             ),
-            rx.text(
-                model.study_subject,
-                font_size=TextSizes.HEADING_H3.value,
-                color=Color.PRIMARY.value,
-                weight="bold",
-                align="center"
-            ),
-            rx.text(
-                model.range_years,
-                font_size=TextSizes.CARD_BODY.value,
-            ),
-            rx.text(
-                model.description,
-                font_size=TextSizes.CARD_BODY.value,
-                text_align="center"
-            ),
-            # Add an URL button only if we have one
-            rx.cond(
-                bool(model.url),
-                main_button("link", "See certificate",
-                            model.url, "3")  # type: ignore
-            ),
-            align="center",
-            justify="center",
-            padding_y="2em",
+            rx.box(
+                background_size="16px 16px",
+                background_image=f"radial-gradient(circle, {rx.color('gray', 12)}" +
+                " 0.3px, transparent 0.5px)",
+                mask="radial-gradient(100% 100% at 100% 100%, " +
+                "hsl(0, 0%, 0%, 0.81), hsl(0, 0%, 0%, 0))",
+                width="100%",
+                height="100%",
+                position="absolute",
+            )
         ),
         height=height,
-        width=width
+        width=width,
     )

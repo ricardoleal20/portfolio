@@ -118,13 +118,26 @@ def __feature_visa_info() -> rx.Component:
 # ======================================== #
 
 
-class Tables(rx.State):  # pylint: disable=C0115, E0239, R0903
-    data: list[dict[str, str]] = [asdict(v) for v in WORK_VISA]
-
+VISA_DATA: list[dict[str, str]] = [asdict(v) for v in WORK_VISA]
 
 def __table_visa() -> rx.Component:
     """Table with the Visa Information"""
     def render_row(data: dict[str, str]):
+
+        # Add the possible link
+        if data["application_link"]:
+            application_link = rx.link(
+                "More Info",
+                href=data["application_link"],
+                size="1",
+                color=rx.color("blue", 11),
+                weight="bold",
+                underline="hover",
+            )
+        else:
+            application_link = rx.text("N/A")
+
+
         return rx.table.row(
             # Add the virst cell of the Table, the one for the VISA NAME
             rx.table.cell(
@@ -170,22 +183,7 @@ def __table_visa() -> rx.Component:
                 )
             ),
             # Include a cell for the LINK
-            rx.table.cell(
-                rx.cond(
-                    data["application_link"],
-                    # If true
-                    rx.link(
-                        "More Info",
-                        href=data["application_link"],
-                        size="1",
-                        color=rx.color("blue", 11),
-                        weight="bold",
-                        underline="hover",
-                    ),
-                    # If false
-                    rx.text("N/A")
-                )
-            ),
+            rx.table.cell(application_link),
             white_space="nowrap",
             align="center",
         )
@@ -208,7 +206,7 @@ def __table_visa() -> rx.Component:
                 white_space="nowrap",
             ),
         ),
-        rx.table.body(rx.foreach(Tables.data, render_row)),
+        rx.table.body(*[render_row(d) for d in VISA_DATA]),
         width="100%",
         variant="ghost",
         max_width="800px",

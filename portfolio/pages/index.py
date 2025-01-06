@@ -18,29 +18,20 @@ def index():
         navbar(),
         rx.vstack(
             rx.box(
-                rx.tablet_and_desktop(
-                    rx.box(
-                        welcome(),
-                        width="50%",
-                        # margin_x="auto",
-                    ),
-                    background_size="20px 20px",
-                    background_image="radial-gradient(circle, hsl(0, 0%, 25%)" +
-                    " 1px, transparent 1px)",
-                    width="200%"
+                rx.box(
+                    welcome(),
+                    # width="50%",
+                    margin_x="auto",
                 ),
-                rx.mobile_only(
-                    rx.box(
-                        welcome(),
-                        width="50%",
-                        margin_x="auto",
-                    ),
-                    background_size="20px 20px",
-                    background_image="radial-gradient(circle, hsl(0, 0%, 25%)" +
-                    " 1px, transparent 1px)",
-                    overlow="hidden",
-                    width="100%"
-                )
+                background_size="20px 20px",
+                background_image="radial-gradient(circle, hsl(0, 0%, 25%)" +
+                " 1px, transparent 1px)",
+                overflow="hidden",
+                width="200%",  # Changed from 200% to 100%
+                style={  # type: ignore
+                    "overflow": "hidden",
+                    "max_width": "100%",
+                }
             ),
             laboral_experience(),
             education(),

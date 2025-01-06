@@ -34,12 +34,26 @@ def index():
                 }
             ),
             laboral_experience(),
+            rx.separator(),
             education(),
             certificates(),
+            rx.separator(),
             projects(),
             open_source(),
+            rx.separator(),
             visa_info(),
+            rx.separator(),
             about_me(),
+            # Add the video at the bottom
+            rx.text(
+                "Video presentation", size="6",
+                margin_top="0.5em", margin_bottom="-2em"
+            ),
+            rx.video(
+                url="/english_presentation.mov",
+                light=False, controls=True,
+                width="auto"
+            ),
             align="center",
             justify="center",
             margin_x="8.5vw",

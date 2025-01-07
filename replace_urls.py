@@ -7,7 +7,7 @@ import re
 patterns = [
     r'/gato.jpeg', r'/profile.jpeg',
     r'/favicon.ico', r'/_next/static/',
-    r'/projects', r'/english_presentation.mov'
+    r'/projects',
 ]
 
 

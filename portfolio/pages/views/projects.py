@@ -15,9 +15,15 @@ def projects():
             "code",
             "Projects"
         ),
-        rx.text(
-            "Some projects that I have developed are the following:",
-            size="5"
+        rx.box(
+            rx.text(
+                "The following projects have been developed to showcase my" +
+                " proficiency with various tools, for personal enjoyment," +
+                " or to address specific problems. You can see them displayed" +
+                " in the table below.",
+                size="4"
+            ),
+            margin_top="1em",
         ),
         __body_projects(),
         # __body_vstack_projects(),
@@ -52,7 +58,7 @@ def __body_projects() -> rx.Component:
             "word_wrap": "break-word"
         },
         "Software Skills": project.software_skills,
-        "Project link": rx.link(
+        "Link": rx.link(
             rx.hstack(
                 rx.icon("link", size=15),
                 rx.text("Visit"),

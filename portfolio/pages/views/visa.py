@@ -168,7 +168,7 @@ def __table_visa() -> rx.Component:
                 ),
                 width="320px",
                 max_width="320px",
-                white_spacE="normal",
+                white_space="normal",
                 word_wrap="break-word"
             ),
             # Include a cell for the ELEGIBILITY CONDITIONS

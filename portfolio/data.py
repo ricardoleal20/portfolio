@@ -190,6 +190,7 @@ PROJECTS: list[ProjectModel] = [
         project_title="SuperMarket Optimization schedule",
         project_image="",
         url_github="https://github.com/ricardoleal20/supermarket_problem",
+        url_project="http://supermarket-opt.ricardoleal20.dev/",
         description="""
         This project implements a supermarket optimization schedule using a linear algorithm solver.
         The objective is to generate a schedule for the supermarket employees based on the number of

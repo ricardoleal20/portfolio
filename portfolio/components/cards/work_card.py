@@ -43,6 +43,10 @@ def __desktop_tablet_work_experience(model: WorkExperienceModel):
                 rx.hstack(
                     __blip(),
                     rx.text(
+                        model.company_and_city + " ||", size="1", weight="medium",
+                        color=rx.color("gray", 11)
+                    ),
+                    rx.text(
                         model.worked_date, size="1", weight="medium", color=rx.color("slate", 11)
                     ),
                     align="center",

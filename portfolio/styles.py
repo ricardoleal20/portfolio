@@ -8,14 +8,13 @@ import reflex as rx
 
 class Color(Enum):
     """Include the palette of colors"""
-    PRIMARY = "#19C28C"
+    PRIMARY = f'{rx.color_mode_cond(light=rx.color("green", 10),dark="#19C28C")}'
     SECONDARY = "#CEF1E6"
-    GREY = rx.color("gray", 5)
-    BACKGROUND = "white"
-    BACKGROUND_CONTENT = "#F7F6F6"
+    GREY = f'{rx.color_mode_cond(light=rx.color("gray", 12), dark=rx.color("gray", 5))}'
+    BACKGROUND = f'{rx.color_mode_cond(light=rx.color("gray", 12), dark="white")}'
+    BACKGROUND_CONTENT = f'{rx.color_mode_cond(light=rx.color("gray", 12), dark="#F7F6F6")}'
     TEXT = "black"
     TEXT_SECONDARY = "white"
-
 
 class TextSizes(Enum):
     """Include all the available sizes for the text"""

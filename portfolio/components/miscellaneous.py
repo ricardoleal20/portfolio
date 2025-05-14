@@ -25,16 +25,10 @@ def main_button(
 ):
     """Main button"""
     return rx.link(
-        rx.button(
-            rx.icon(
-                icon_str
-            ),
-            text,
-            size=size_str,
-            style=main_button_style
-        ),
+        rx.button(rx.icon(icon_str), text, size=size_str, style=main_button_style),
         href=url_str,
-        is_external=True
+        is_external=True,
+        z_index=1,
     )
 
 

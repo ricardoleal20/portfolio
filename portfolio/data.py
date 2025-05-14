@@ -72,7 +72,7 @@ EDUCATION: list[EducationalModel] = [
         education_type=EducationalType.UNIVERSITY,
         educational_entity="Universidad Internacional de la Rioja",
         study_subject="MSc Computational Science and Applied Mathematics",
-        range_years="2023-Current (Part-Time, expected to end by early 2025.)",
+        range_years="2023 - March 2025",
         description="""
             Specialization in Computer Science, I work developing APIs for problem solutions in the 
             industry, using the adequate design pattern for the problem and using techniques to ensure 
@@ -86,7 +86,7 @@ EDUCATION: list[EducationalModel] = [
             applications of mathematics in real life, I know how to schedule daily tasks
             to improve the supply chain of industries and how to use the received data to model
             a digital twin of the problems that can be optimized. 
-        """
+        """,
     ),
     EducationalModel(
         education_type=EducationalType.UNIVERSITY,
@@ -107,8 +107,8 @@ EDUCATION: list[EducationalModel] = [
             research assistant in the Materials Science department, using
             mathematical modeling to understand the materials' behavior in different
             situations.
-        """
-    )
+        """,
+    ),
 ]
 
 # ========================================== #
@@ -222,6 +222,41 @@ PROJECTS: list[ProjectModel] = [
 # ========================================== #
 OPEN_SOURCE: list[OpenSourceModel] = [
     OpenSourceModel(
+        project_title="ChopFlow",
+        project_image="/projects/chopflow.png",
+        url_github="https://github.com/ricardoleal20/ChopFlow",
+        url_project="",
+        description="""Distributed task queue written in Rust with a Python interface,
+        designed for both production applications and research in distributed systems.
+
+        Features include task queue management, worker dispatch, retry policies, resource tracking,
+        Python interface similar to Celery, and metrics collection for research and benchmarking.
+        """,
+        software_skills=(
+            "Rust",
+            "Software Architecture",
+            "Distributed Computing",
+            "Software Engineering",
+        ),
+    ),
+    OpenSourceModel(
+        project_title="VersionWise",
+        project_image="/projects/version_wise.png",
+        url_github="https://github.com/ricardoleal20/VersionWise",
+        url_project="",
+        description="""Tool for teams that manage the creation and modification
+        of the CHANGELOG based on a specified set of changes. It allow to keep a clean
+        right path for groups implementation.
+        """,
+        software_skills=(
+            "Rust",
+            "API Development",
+            "Software Architecture",
+            "DevOps",
+            "CI/CD",
+        ),
+    ),
+    OpenSourceModel(
         project_title="PyMath Compute",
         project_image="/projects/pymath_compute.png",
         url_github="https://github.com/ricardoleal20/pymath_compute",
@@ -233,23 +268,13 @@ OPEN_SOURCE: list[OpenSourceModel] = [
         and related fields.
         """,
         software_skills=(
-            "Python", "Rust", "API Development",
-            "Software Architecture", "Applied Mathematics"
-        )
+            "Python",
+            "Rust",
+            "API Development",
+            "Software Architecture",
+            "Applied Mathematics",
+        ),
     ),
-    OpenSourceModel(
-        project_title="SemPyVer",
-        project_image="",
-        url_github="https://github.com/ricardoleal20/sempyver",
-        url_project="",
-        description="""Tool for teams that manage the creation and modification
-        of the CHANGELOG based on a specified set of changes. It allow to keep a clean
-        right path for groups implementation.
-        """,
-        software_skills=(
-            "Rust", "API Development"
-        )
-    )
 ]
 
 # ========================================== #
@@ -260,19 +285,15 @@ WORK_VISA: list[WorkVisaModel] = [
     WorkVisaModel(
         visa_name="Citizenship",
         country="Mexico",
-        description=(
-            "As a citizen, I do not need any kind of visa to work in Mexico."
-        ),
-        eligibility_conditions=(
-            "Requires to be a Mexican citizen."
-        ),
+        description=("As a citizen, I do not need any kind of visa to work in Mexico."),
+        eligibility_conditions=("Requires to be a Mexican citizen."),
         duration="N/A",
         application_fee=9999,
         processing_time="2-3 months",
         required_documents=[
             "Valid passport or ID",
         ],
-        application_link=""
+        application_link="",
     ),
     # * USA Work Visas
     # WorkVisaModel(
@@ -300,14 +321,14 @@ WORK_VISA: list[WorkVisaModel] = [
         country="United States",
         description=(
             "A non-immigrant visa for citizens of Mexico and Canada, "
-            "allowing temporary employment in the United States in qualified professional roles." +
-            " This, different from the H-1B visa, does not require a sponsor employer."
+            "allowing temporary employment in the United States in qualified professional roles."
+            + " This, different from the H-1B visa, does not require a sponsor employer."
         ),
         eligibility_conditions=(
-            "Applicants must be citizens of Mexico or Canada" +
-            " and have a job offer in a NAFTA-listed "
-            "occupation (e.g., accountants, engineers, scientists)." +
-            " Proof of qualifications required."
+            "Applicants must be citizens of Mexico or Canada"
+            + " and have a job offer in a NAFTA-listed "
+            "occupation (e.g., accountants, engineers, scientists)."
+            + " Proof of qualifications required."
         ),
         duration="3 years (renewable indefinitely under certain conditions)",
         application_fee=160.00,  # General consular processing fee
@@ -316,36 +337,30 @@ WORK_VISA: list[WorkVisaModel] = [
             "Passport",
             "Degree certificates",
             "USA Job offer letter",
-            "DS-160 application form"
+            "DS-160 application form",
         ],
-        application_link="https://travel.state.gov/content/travel/en/us-visas/employment/tn.html"
+        application_link="https://travel.state.gov/content/travel/en/us-visas/employment/tn.html",
     ),
     # * Canada Work Visas
     WorkVisaModel(
-        visa_name="Working Holiday Visa (IEC)",
+        visa_name="LMIA Visa",
         country="Canada",
         description=(
-            "A visa that allows Mexican citizens to travel and work temporarily in Canada "
-            "without the need for a job offer or sponsor."
+            "A work permit for foreign nationals, including Mexicans, who have a job offer from a Canadian employer. "
         ),
         eligibility_conditions=(
-            "Applicants must be Mexican citizens aged 18-35, have a valid"
-            " passport, and sufficient funds "
-            "to support themselves upon arrival (minimum CAD 2,500)."
-            " No job offer is required."
+            "Applicants must have a valid job offer from a Canadian employer who has received a positive LMIA. "
+            "The applicant must meet the requirements of the job, provide proof of qualifications, and demonstrate intent to leave Canada at the end of the authorized stay."
         ),
-        duration="Up to 1 year",
-        application_fee=156.00,  # Approximate fee in CAD
-        processing_time="6-8 weeks",
+        duration="Typically up to 2 years (may vary by job and contract)",
+        application_fee=155.00,  # Work permit application fee in CAD
+        processing_time="8-16 weeks (varies by country and application type)",
         required_documents=[
             "Valid Mexican passport",
             "Proof of funds",
             "Police clearance certificate",
-            "Application IRCC"
+            "Application IRCC",
         ],
-        application_link=(
-            "https://www.canada.ca/en/immigration-refugees-citizenship/"
-            "services/work-canada/iec.html"
-        )
-    )
+        application_link="N/A",
+    ),
 ]

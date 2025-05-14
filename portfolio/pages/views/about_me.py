@@ -104,13 +104,13 @@ def __info_about_me(width: str = "100%"):
             "\n",
         ),
         paragraph_normal_and_bold(
-            "Currently pursuing my ",
+            "I hold a ",
             ":bold:MSc. in Computational Science and Applied Mathematics",
             ", with a specialization in Computer Science, focusing on the development of APIs for"
-            " industrial problem-solving. I hold a ",
+            " industrial problem-solving. I also hold a ",
             ":bold:BSc. in Physics",
             ", where I specialized as a"
-            " Computational Physicist, with a focus on Materials Science."
+            " Computational Physicist, with a focus on Materials Science.",
         ),
         paragraph_normal_and_bold(
             "During my Bachelor, I use Python for research purposes, and learn about the correct",
@@ -121,7 +121,7 @@ def __info_about_me(width: str = "100%"):
             ":bold:Valiot",
             " give me the expertise of how it really feels to work to solve real world problems,",
             " thing that later it would give me the inspiration to start my Master degree in ",
-            " that same field."
+            " that same field.",
         ),
         paragraph_normal_and_bold(
             " I get a lot of love in programming, in automation to reduce",
@@ -132,7 +132,7 @@ def __info_about_me(width: str = "100%"):
             " tools that the Product team was developing to improve the implementation process,",
             " but in the first months I quickly scaled to the product team, developing different",
             " tools to reduce the workload of the implementation team, and increasing the",
-            " performance of the current and existing tools."
+            " performance of the current and existing tools.",
         ),
         paragraph_normal_and_bold(
             "I love programming, and I have a strict rule on higher quality code for everything",
@@ -141,7 +141,7 @@ def __info_about_me(width: str = "100%"):
             ":bold:Gato",
             " that is my daily companion for my work sessions, and a dog called ",
             ":bold:Chop",
-            " that is my exercise partner."
+            " that is my exercise partner.",
         ),
-        width=width
+        width=width,
     )

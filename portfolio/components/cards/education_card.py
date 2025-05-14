@@ -62,7 +62,7 @@ def education_card(model: EducationalModel, number_of_cards: int = 2):
                         "link",
                         "See certificate",
                         model.url,  # type: ignore
-                        "3"
+                        "3",
                     )
                 ),
                 align="center",

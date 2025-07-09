@@ -36,45 +36,28 @@ def __desktop_welcome_home():
                     info.FULL_NAME,
                     font_size=TextSizes.HEADING_H1.value,
                     as_="h1",
-                    line_height="1.2em"
+                    line_height="1.2em",
                 ),
                 rx.text(
                     info.PROFESSION,
                     font_size=TextSizes.HEADING_H2.value,
-                    weight="regular"
+                    weight="regular",
                 ),
                 rx.text(
-                    info.DESCRIPTION,
-                    font_size=TextSizes.BODY_HOME_TEXT.value,
-                    as_="p"
+                    info.DESCRIPTION, font_size=TextSizes.BODY_HOME_TEXT.value, as_="p"
                 ),
                 rx.hstack(
                     link_icons("linkedin", info.URL_LINKED_IN, 35),
                     link_icons("github", info.URL_GITHUB, 35),
-                    spacing="5"
+                    spacing="5",
                 ),
                 rx.hstack(
-                    main_button(
-                        "download",
-                        "Download CV",
-                        info.URL_CV,
-                        "4"
-                    ),
-                    secondary_button(
-                        "mail",
-                        "Contact me",
-                        info.EMAIL,
-                        "4"
-                    ),
-                    spacing="5"
+                    secondary_button("mail", "Contact me", info.EMAIL, "4"), spacing="5"
                 ),
             ),
             # Profile
             rx.image(
-                src="/profile.jpeg",
-                width="auto",
-                height="22vw",
-                border_radius="30px"
+                src="/profile.jpeg", width="auto", height="22vw", border_radius="30px"
             ),
             align="center",
             spacing="7",
@@ -87,53 +70,36 @@ def __table_welcome_home():
     return rx.box(
         rx.vstack(
             rx.image(
-                src="/profile.jpeg",
-                width="auto",
-                height="270px",
-                border_radius="30px"
+                src="/profile.jpeg", width="auto", height="270px", border_radius="30px"
             ),
             rx.vstack(
                 rx.heading(
                     info.FULL_NAME,
                     font_size=TextSizes.HEADING_H1.value,
                     as_="h1",
-                    line_height="1.2em"
+                    line_height="1.2em",
                 ),
                 rx.text(
                     info.PROFESSION,
                     font_size=TextSizes.HEADING_H2.value,
-                    weight="regular"
+                    weight="regular",
                 ),
                 rx.text(
-                    info.DESCRIPTION,
-                    font_size=TextSizes.BODY_HOME_TEXT.value,
-                    as_="p"
+                    info.DESCRIPTION, font_size=TextSizes.BODY_HOME_TEXT.value, as_="p"
                 ),
                 rx.hstack(
                     link_icons("linkedin", info.URL_LINKED_IN, 35),
                     link_icons("github", info.URL_GITHUB, 35),
-                    spacing="5"
+                    spacing="5",
                 ),
                 rx.hstack(
-                    main_button(
-                        "download",
-                        "Download CV",
-                        info.URL_CV,
-                        "4"
-                    ),
-                    secondary_button(
-                        "mail",
-                        "Contact me",
-                        info.EMAIL,
-                        "4"
-                    ),
-                    spacing="6"
-                )
+                    secondary_button("mail", "Contact me", info.EMAIL, "4"), spacing="6"
+                ),
             ),
             align="center",
             spacing="7",
         ),
-        margin_top="3em"
+        margin_top="3em",
     )
 
 
@@ -142,10 +108,7 @@ def __mobile_welcome_home():
     return rx.box(
         rx.vstack(
             rx.image(
-                src="/profile.jpeg",
-                width="auto",
-                height="270px",
-                border_radius="30px"
+                src="/profile.jpeg", width="auto", height="270px", border_radius="30px"
             ),
             rx.vstack(
                 rx.heading(
@@ -153,19 +116,19 @@ def __mobile_welcome_home():
                     font_size=TextSizes.HEADING_H1_MOBILE.value,
                     as_="h1",
                     line_height="1.2em",
-                    text_align="center"
+                    text_align="center",
                 ),
                 rx.text(
                     info.PROFESSION,
                     font_size=TextSizes.HEADING_H2_MOBILE.value,
                     weight="regular",
                     text_align="center",
-                    width="100%"
+                    width="100%",
                 ),
                 rx.text(
                     info.DESCRIPTION,
                     font_size=TextSizes.BODY_HOME_TEXT_MOBILE.value,
-                    as_="p"
+                    as_="p",
                 ),
                 rx.hstack(
                     link_icons("linkedin", info.URL_LINKED_IN, 25),
@@ -173,29 +136,18 @@ def __mobile_welcome_home():
                     spacing="5",
                     justify="center",
                     align="center",
-                    width="100%"
+                    width="100%",
                 ),
                 rx.vstack(
-                    main_button(
-                        "download",
-                        "Download CV",
-                        info.URL_CV,
-                        "4"
-                    ),
-                    secondary_button(
-                        "mail",
-                        "Contact me",
-                        info.EMAIL,
-                        "4"
-                    ),
+                    secondary_button("mail", "Contact me", info.EMAIL, "4"),
                     spacing="4",
                     justify="center",
                     align="center",
-                    width="100%"
-                )
+                    width="100%",
+                ),
             ),
             align="center",
-            spacing="7"
+            spacing="7",
         ),
-        margin_top="3em"
+        margin_top="3em",
     )

@@ -18,4 +18,3 @@ EMAIL = "mailto:ricardo.lealpz@gmail.com"
 # URLs
 URL_GITHUB = "https://github.com/ricardoleal20"
 URL_LINKED_IN = "https://www.linkedin.com/in/ricardoleal20"
-URL_CV = "https://github.com/ricardoleal20/portfolio/blob/main/CV_RMLL.pdf"

@@ -5,81 +5,104 @@ import reflex as rx
 # Local imports
 from portfolio.models import EducationalModel
 from portfolio.styles import TextSizes, Color
-# Locally import the main button
 from portfolio.components.miscellaneous import main_button
 
 
-def education_card(model: EducationalModel, number_of_cards: int = 2):
-    """Include the education card"""
-    # SELECT THE WIDTH OF THE CARD!
-    width = f"{100/number_of_cards}%"
-    # Only if we have number of cards = 1, we'll change the height
-    if number_of_cards == 1:
-        # Depending on the len of characters...
-        if len(model.description) > 1100:
-            height = "60em"
-        elif len(model.description) > 950:
-            height = "50em"
-        elif len(model.description) > 600:
-            height = "40em"
-        else:
-            height = "30em"
-    else:
-        height = "38em"
-    # Define the study object ONLY if they have url
-    return rx.card(
-        rx.hstack(
-            rx.vstack(
-                rx.icon(
-                    model.education_type.value,
-                    size=30
-                ),
+def education_card(model: EducationalModel, _number_of_cards: int = 2):
+    """Timeline-style row for an education entry"""
+    return rx.hstack(
+        # Left: icon in a circle
+        rx.box(
+            rx.icon(model.education_type.value, size=22, color=Color.PRIMARY.value),
+            padding="0.6em",
+            border=f"2px solid {Color.PRIMARY.value}",
+            border_radius="50%",
+            flex_shrink="0",
+        ),
+        # Right: content
+        rx.vstack(
+            rx.hstack(
                 rx.text(
                     model.study_subject,
                     font_size=TextSizes.HEADING_H3.value,
                     color=Color.PRIMARY.value,
                     weight="bold",
-                    align="center"
                 ),
-                rx.text(
+                rx.spacer(),
+                rx.badge(
                     model.range_years,
-                    font_size=TextSizes.CARD_BODY.value,
-                ),
-                # Create the Hline
-                rx.el.hr(
-                    background_color=Color.GREY,
-                    height="3px", width="90%"
-                ),
-                rx.text(
-                    model.description,
-                    font_size=TextSizes.CARD_BODY.value,
-                    text_align="center"
-                ),
-                # Add an URL button only if we have one
-                rx.cond(
-                    bool(model.url),
-                    main_button(
-                        "link",
-                        "See certificate",
-                        model.url,  # type: ignore
-                        "3",
-                    )
+                    color_scheme="green",
+                    variant="soft",
+                    size="1",
                 ),
                 align="center",
-                justify="center",
-                padding_y="2em",
-            ),
-            rx.box(
-                background_size="16px 16px",
-                background_image=f"radial-gradient(circle, {rx.color('gray', 12)}" +
-                " 0.3px, transparent 0.5px)",
-                mask="radial-gradient(100% 100% at 100% 100%, " +
-                "hsl(0, 0%, 0%, 0.81), hsl(0, 0%, 0%, 0))",
                 width="100%",
-                height="100%",
-                position="absolute",
-            )
+            ),
+            rx.text(
+                model.educational_entity,
+                font_size=TextSizes.CARD_BODY.value,
+                color="var(--gray-11)",
+                font_style="italic",
+            ),
+            rx.text(
+                model.description.strip(),
+                font_size=TextSizes.CARD_BODY.value,
+                color="var(--gray-11)",
+            ),
+            rx.cond(
+                bool(model.url),
+                main_button("link", "See certificate", model.url, "2"),  # type: ignore
+            ),
+            spacing="1",
+            align="start",
+            width="100%",
         ),
-        height=height,
-        width=width,
+        align="start",
+        spacing="5",
+        width="100%",
+        padding="1.2em",
+        border_left="3px solid var(--gray-4)",
+        _hover={"border_left": f"3px solid {Color.PRIMARY.value}"},
+        transition="border-left 0.2s ease",
+    )
+
+
+def certificate_card(model: EducationalModel):
+    """Compact badge-style card for certificates"""
+    return rx.card(
+        rx.hstack(
+            rx.icon(model.education_type.value, size=20, color=Color.PRIMARY.value),
+            rx.vstack(
+                rx.text(
+                    model.study_subject,
+                    font_size=TextSizes.CARD_BODY.value,
+                    weight="bold",
+                    color=Color.PRIMARY.value,
+                ),
+                rx.text(
+                    model.educational_entity,
+                    font_size="0.85em",
+                    color="var(--gray-11)",
+                ),
+                rx.badge(
+                    model.range_years,
+                    color_scheme="green",
+                    variant="soft",
+                    size="1",
+                ),
+                spacing="1",
+                align="start",
+            ),
+            spacing="3",
+            align="start",
+        ),
+        rx.cond(
+            bool(model.url),
+            rx.box(
+                main_button("link", "See certificate", model.url, "2"),  # type: ignore
+                margin_top="0.8em",
+            ),
+        ),
+        padding="1em",
+        width="100%",
     )

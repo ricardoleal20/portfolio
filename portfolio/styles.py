@@ -52,7 +52,7 @@ text_could_hover = {
 }
 
 border_spacer = rx.color_mode_cond(
-    light=f"1px solid {rx.color('gray', 12)}",
+    light="1px solid var(--gray-12)",
     dark="1px solid #1F1F22"
 )
 

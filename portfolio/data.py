@@ -5,7 +5,8 @@ We'll include data such as the work experience, the education and others.
 from portfolio.models import (
     WorkExperienceModel, ProjectModel,
     EducationalModel, EducationalType,
-    OpenSourceModel, WorkVisaModel
+    OpenSourceModel, WorkVisaModel,
+    ResearchPaperModel
 )
 
 # ========================================== #
@@ -274,6 +275,39 @@ OPEN_SOURCE: list[OpenSourceModel] = [
             "Software Architecture",
             "Applied Mathematics",
         ),
+    ),
+]
+
+# ========================================== #
+#            RESEARCH PAPERS                 #
+# ========================================== #
+RESEARCH_PAPERS: list[ResearchPaperModel] = [
+    ResearchPaperModel(
+        title="Stochastic diffusion adaptive optimization, a novel metaheuristic approach",
+        authors=("Ricardo Miguel Leal Lopez",),
+        journal="Discover Analytics, Springer Nature",
+        year="2025",
+        abstract="""This study presents Stochastic Diffusion Adaptive Optimization (SDAO), a novel \
+metaheuristic algorithm grounded in diffusion dynamics and stochastic modeling. The proposed method \
+replaces traditional gradient descent with a density-driven diffusion mechanism, derived from Fick's \
+second law, allowing particles to escape densely populated regions and effectively explore sparsely \
+sampled areas. SDAO incorporates global and individual guidance mechanisms, adaptive parameter tuning, \
+opposition-based learning, and periodic bound contraction to enhance convergence behavior. Comprehensive \
+experiments were conducted across four benchmark categories — standard, stochastic, CEC, and real-world \
+problems — under various dimensional settings. The algorithm consistently demonstrated competitive \
+performance and significantly outperformed state-of-the-art methods, including SHADEwithILS, AMSO, and \
+TLPSO, particularly in noisy and high-dimensional environments. Statistical validation using ANOVA, \
+Tukey's HSD, and Wilcoxon tests confirmed the significance and robustness of the observed performance \
+improvements. These results establish SDAO as a promising solution for complex, high-dimensional, and \
+uncertainty-laden optimization problems, with broad applicability to real-world scenarios.""",
+        doi="10.1007/s44257-025-00054-1",
+        keywords=(
+            "Hybrid metaheuristics",
+            "Adaptive parameters",
+            "Stochastic optimization",
+            "Global optimization",
+        ),
+        url="https://doi.org/10.1007/s44257-025-00054-1",
     ),
 ]
 

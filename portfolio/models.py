@@ -66,6 +66,19 @@ class OpenSourceModel:
 
 
 @dataclass
+class ResearchPaperModel:
+    """Include a dataclass model for the Research Paper information"""
+    title: str
+    authors: tuple[str, ...]
+    journal: str
+    year: str
+    abstract: str
+    doi: str
+    keywords: tuple[str, ...]
+    url: str
+
+
+@dataclass
 class WorkVisaModel:  # pylint: disable=R0902
     """Include a dataclass model for the Visa information"""
     visa_name: str

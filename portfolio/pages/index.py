@@ -7,6 +7,7 @@ from portfolio.pages.views.laboral_experience import laboral_experience
 from portfolio.pages.views.education import education, certificates
 from portfolio.pages.views.projects import projects
 from portfolio.pages.views.open_source import open_source
+from portfolio.pages.views.research_papers import research_papers
 from portfolio.pages.views.visa import visa_info
 from portfolio.pages.views.about_me import about_me
 from portfolio.pages.views.footer import footer
@@ -40,6 +41,8 @@ def index():
             rx.separator(),
             projects(),
             open_source(),
+            rx.separator(),
+            research_papers(),
             rx.separator(),
             visa_info(),
             rx.separator(),

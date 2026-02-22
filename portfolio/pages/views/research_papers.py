@@ -24,16 +24,26 @@ def research_papers():
 
 def __paper_card(paper: ResearchPaperModel):
     """Card component for a single research paper"""
-    return rx.card(
-        rx.vstack(
-            # Title and year
-            rx.hstack(
+    return rx.accordion.root(
+        rx.accordion.item(
+            header=rx.hstack(
                 rx.vstack(
                     rx.text(
                         paper.title,
                         font_size=TextSizes.HEADING_H3.value,
                         color=Color.PRIMARY.value,
                         weight="bold",
+                    ),
+                    rx.hstack(
+                        rx.icon("book-open", size=14, color=rx.color("gray", 11)),
+                        rx.text(
+                            paper.journal,
+                            font_size=TextSizes.CARD_BODY.value,
+                            color=rx.color("gray", 11),
+                            font_style="italic",
+                        ),
+                        spacing="2",
+                        align="center",
                     ),
                     rx.text(
                         " · ".join(paper.authors),
@@ -50,79 +60,66 @@ def __paper_card(paper: ResearchPaperModel):
                     variant="soft",
                     size="2",
                 ),
-                align="start",
-                width="100%",
-            ),
-            # Journal
-            rx.hstack(
-                rx.icon("book-open", size=16, color=rx.color("gray", 11)),
-                rx.text(
-                    paper.journal,
-                    font_size=TextSizes.CARD_BODY.value,
-                    color=rx.color("gray", 11),
-                    font_style="italic",
-                ),
-                spacing="2",
                 align="center",
-            ),
-            # Divider
-            rx.el.hr(
-                background_color=Color.GREY,
-                height="1px",
                 width="100%",
+                padding_right="1em",
             ),
-            # Abstract
-            rx.text(
-                paper.abstract,
-                font_size=TextSizes.CARD_BODY.value,
-                text_align="justify",
-            ),
-            # Keywords
-            rx.hstack(
+            content=rx.vstack(
+                # Abstract
                 rx.text(
-                    "Keywords:",
+                    paper.abstract,
                     font_size=TextSizes.CARD_BODY.value,
-                    weight="bold",
+                    text_align="justify",
                 ),
-                rx.flex(
-                    *[
-                        rx.badge(
-                            kw,
-                            color_scheme="green",
-                            variant="outline",
-                            size="1",
-                        )
-                        for kw in paper.keywords
-                    ],
-                    wrap="wrap",
+                # Keywords
+                rx.hstack(
+                    rx.text(
+                        "Keywords:",
+                        font_size=TextSizes.CARD_BODY.value,
+                        weight="bold",
+                    ),
+                    rx.flex(
+                        *[
+                            rx.badge(
+                                kw,
+                                color_scheme="green",
+                                variant="outline",
+                                size="1",
+                            )
+                            for kw in paper.keywords
+                        ],
+                        wrap="wrap",
+                        gap="2",
+                    ),
+                    align="center",
+                    flex_wrap="wrap",
                     gap="2",
                 ),
-                align="center",
-                flex_wrap="wrap",
-                gap="2",
-            ),
-            # DOI and link button
-            rx.hstack(
-                rx.text(
-                    f"DOI: {paper.doi}",
-                    font_size=TextSizes.CARD_BODY.value,
-                    color=rx.color("gray", 11),
+                # DOI and link button
+                rx.hstack(
+                    rx.text(
+                        f"DOI: {paper.doi}",
+                        font_size=TextSizes.CARD_BODY.value,
+                        color=rx.color("gray", 11),
+                    ),
+                    rx.spacer(),
+                    main_button(
+                        "external-link",
+                        "Read Paper",
+                        paper.url,
+                        "2",
+                    ),
+                    align="center",
+                    width="100%",
                 ),
-                rx.spacer(),
-                main_button(
-                    "external-link",
-                    "Read Paper",
-                    paper.url,
-                    "2",
-                ),
-                align="center",
-                width="100%",
+                spacing="4",
+                align="start",
             ),
-            spacing="4",
-            align="start",
-            padding="1em",
+            value="paper",
         ),
+        collapsible=True,
         width="100%",
+        variant="surface",
     )
 
 

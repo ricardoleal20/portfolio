@@ -51,9 +51,10 @@ text_could_hover = {
     "cursor": "pointer"
 }
 
-color_border = rx.color_mode_cond(
-    light=Color.BACKGROUND_CONTENT.value, dark="#1F1F22")
-border_spacer = f"1px solid {color_border}"
+border_spacer = rx.color_mode_cond(
+    light=f"1px solid {rx.color('gray', 12)}",
+    dark="1px solid #1F1F22"
+)
 
 button_secondary_hover = {
     "color": rx.color_mode_cond(light="black", dark="white"),

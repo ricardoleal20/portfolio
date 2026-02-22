@@ -67,42 +67,28 @@ def education_card(model: EducationalModel, _number_of_cards: int = 2):
     )
 
 
-def certificate_card(model: EducationalModel):
-    """Compact badge-style card for certificates"""
-    return rx.card(
-        rx.hstack(
-            rx.icon(model.education_type.value, size=20, color=Color.PRIMARY.value),
-            rx.vstack(
+def certificate_row(model: EducationalModel) -> dict:
+    """Return a dict row for the certificates table"""
+    link_cell = (
+        main_button("external-link", "View", model.url, "1")  # type: ignore
+        if model.url else
+        rx.text("—", font_size="12px")
+    )
+    return {
+        "Certificate": {
+            "value": rx.hstack(
+                rx.icon(model.education_type.value, size=14, color=Color.PRIMARY.value),
                 rx.text(
                     model.study_subject,
-                    font_size=TextSizes.CARD_BODY.value,
+                    font_size="12px",
                     weight="bold",
                     color=Color.PRIMARY.value,
                 ),
-                rx.text(
-                    model.educational_entity,
-                    font_size="0.85em",
-                    color="var(--gray-11)",
-                ),
-                rx.badge(
-                    model.range_years,
-                    color_scheme="green",
-                    variant="soft",
-                    size="1",
-                ),
-                spacing="1",
-                align="start",
-            ),
-            spacing="3",
-            align="start",
-        ),
-        rx.cond(
-            bool(model.url),
-            rx.box(
-                main_button("link", "See certificate", model.url, "2"),  # type: ignore
-                margin_top="0.8em",
-            ),
-        ),
-        padding="1em",
-        width="100%",
-    )
+                spacing="2",
+                align="center",
+            )
+        },
+        "Issued by": model.educational_entity,
+        "Year": model.range_years,
+        "Link": {"value": link_cell},
+    }

@@ -22,26 +22,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Set up Python 🐍
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.10"
-
-      - name: Install dependencies
-        run: pip install -Iv reflex==0.5.7 "pydantic>=2.0,<2.11" "sqlmodel>=0.0.21,<0.0.23"
-
-      - name: Build page 🧱
-        run: API_URL=https://portfolio.ricardoleal20.dev/ reflex export
-
-      - name: Extract page 🔐
-        run: unzip frontend.zip
-
-      - name: Inject page 💉
-        run: python replace_urls.py
-        env:
-          URL: https://portfolio.ricardoleal20.dev
+      # The site is a static OpenDesign HTML build (index.html + assets/).
+      # No Reflex build step is required anymore.
+      - name: Stage site 📦
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp -r assets _site/
 
       - name: Setup Pages 🧱
         uses: actions/configure-pages@v5
@@ -49,7 +38,7 @@ jobs:
       - name: Upload page 🕊️
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "_site"
 
       - name: Deploy to GitHub Pages 🚀
         id: deployment
